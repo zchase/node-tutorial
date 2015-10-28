@@ -1,27 +1,31 @@
 {
   "name": "nodetutorial",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "dependencies": {
     "express": "^4.13.3",
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jasmine": "~0.8.1",
     "jasmine-node": "^1.14.5",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "jasmine": "^2.3.2"
   },
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "mocha": "^2.3.3"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zchase/node-tutorial.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/zchase/node-tutorial/issues"
   },
-  "homepage": "https://github.com/zchase/node-tutorial#readme",
-  "description": ""
+  "homepage": "https://github.com/zchase/node-tutorial#readme"
 }
