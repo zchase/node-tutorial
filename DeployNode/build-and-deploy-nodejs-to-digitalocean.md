@@ -14,7 +14,7 @@ For this tutorial we will be using a basic "Hello World" Node.js app, but you ca
         $ cd nodeTutorial
         $ touch app.js
 
-Now that we have everything all set up we can start by creating a basic Node.js "Hello World" app. Simply open app.js in the  text editor of your choice and paste in the below code:
+Now that we have everything all set up we can start by creating a basic Node.js "Hello World" app. Open app.js in the  text editor of your choice and paste in the below code:
 
         var express = require('express');
         var app = express();
@@ -31,7 +31,7 @@ You will notice that I have included "express" as a Node Module. Make sure you h
 
 <img src="images/nodeHelloWorld.png" alt="Node.js Example App">
 
-See wasn't that easy? Now that we have a working Node application all we have to do is deploy it to our server. Distelli makes this process incredibly easy and painless. Instead of having to write custom scripts to deploy your application, Distelli will do it all for you. Only a few clicks and your deployment will be live and ready for your customers! Below are the simple steps you need to follow to get your application from being hosted locally to your production server.
+See wasn't that easy? Now that we have a working Node application all we have to do is deploy it to our server. Distelli makes this process incredibly easy and painless. Instead of having to write custom scripts to deploy your application, Distelli will do it all for you. With just a couple clicks your deployment will be live and ready for your customers! Below are the simple steps you need to follow to get your application from being hosted locally to being hosted on your production server.
 
 Before we move on, make sure you have set up a repository in GitHub or BitBucket. 
 
@@ -39,7 +39,7 @@ Before we move on, make sure you have set up a repository in GitHub or BitBucket
 
 ## Step 1. Push your Code to GitHub
 
-For this tutorial I am using GitHub as my repository, but you can use BitBucket as well without any issue. First you will need to create a repo in GitHub and push your code to that repository. Once it is created, open your terminal and make sure you are in the directory that your app code is in.
+For this tutorial I am using GitHub as my repository, but you can use BitBucket as well without any issue. First you will need to create a repo in GitHub and push your code to that repository. Once created, open your terminal and make sure you are in the directory that your app code is in.
 
 Initialize the local directory as a Git Repo
 >        $ git init
@@ -60,7 +60,7 @@ Navigate to your GitHub or BitBucket Repo and find your remote repository URL. O
 Now push the changes to your repo
         $git push origin master
 
-Now  we have our GitHub/BitBucket repo all set up. Yet there is still one more thing we have to do before we set up our app on Distelli and get it deployed into production. Go back to your terminal and enter the command `npm init`. Follow the prompts and afterwards you should now have a package.json file in your directory. Once that file has been created push the update into your GitHub Rep.
+Now  we have our GitHub/BitBucket repo all set up. Yet there is still one more thing we have to do before we set up our app on Distelli and get it deployed into production. Go back to your terminal and enter the command `npm init`. Follow the prompts and afterwards you should now have a package.json file in your directory. Once that file is created, push the update into your GitHub Rep.
 
         $ git add .
         $ git commit -m "Added package.json"
@@ -70,11 +70,9 @@ We are now ready to move on to the next step, setting up our server.
 
 ## Step 2. Set Up Your Server
 
-The next step in deploying our app is a very important one, make sure you have a server to run your application on. You can use any type of server - public cloud, private cloud or physical. Distelli will let you deploy your code to  Vagrant VMs or servers in a VPC. You can even deploy to the server under your desk.
+The next step in deploying our app is to make sure you have a server to run your application on. You can use any type of server - public cloud, private cloud or physical. Distelli will let you deploy your code to  Vagrant VMs or servers in a VPC. You can even deploy to the server under your desk. For this tutorial I am going to be deploying to a server hosted by Digital Ocean. If you already have your server set up you can skip to the next step.
 
-For this tutorial I am going to be deploying to a server hosted by Digital Ocean. If you already have your server set you can skip to the next step.
-
-To get your server set up on Digital Ocean, you will need to navigate to <a href="https://www.digitalocean.com/" target="_blank">digitalocean.com</a> to get set up. If you already have an acount please Log In, if not Sign Up for an account now. Once you have created an account, or logged in, you will need to "Create Droplet".
+To get your server set up on Digital Ocean, you will need to navigate to <a href="https://www.digitalocean.com/" target="_blank">digitalocean.com</a> to get set up. If you already have an account please Log In, if not Sign Up for an account now. Once you have created an account, or logged in, you will need to "Create Droplet".
 
 <img src="images/digitalOceanCreate.png" alt="Create Digital Ocean Droplet" />
 
@@ -125,17 +123,17 @@ Name your app and then select the Repository you would like to connect to. As a 
 
 <img src="images/distelliNameApp.png" alt="Name Your Distelli App" />
 
-After we click the button to conenct to our Repository, we then select the appropriate repo that contains our code. In this example I store my code in the repo name 'node-tutorial'. Make sure to select the repo we set up earlier in the tutorial.
+After we click the button to connect to our Repository, we then select the appropriate repo that contains our code. In this example I store my code in the repo name 'node-tutorial'. Make sure to select the repo we set up earlier in the tutorial.
 
 <img src="images/distelliChooseRepo.png" alt="Choose Your Distelli Repo" />
 
-Then select the appropraite branch for your deployment. I only have a master branch, but you can deploy any branch from your repo!
+Then select the appropriate branch for your deployment. I only have a master branch, but you can deploy any branch from your repo!
 
 <img src="images/distelliChooseBranch.png" alt="Choose Your Distelli Repo's Branch" />
 
-Now that we have selected our branch, Distelli will ask to create our environments. As default Disteli will create a beta and production environment. You can just press "All Done" to move to the next step. We will be deploying our production environment, but you can see how Distelli can help manage your deployments and make sure you only put the code you want into production.
+Now that we have selected our branch, Distelli will ask to create our environments. As default Distelli will create a beta and production environment. You can just press "All Done" to move to the next step. We will be deploying our production environment, but you can see how Distelli can help manage your deployments and make sure you only push the code you want into production.
 
-Now Distelli will prompt you to download the manifest file. Make sure you select the Javascript Version of the manifest, as our code is written in Javascript. You will need this file to correctly build and deploy your applicaion. Download the file and then open in your favorite text editor. We will need to make the following changes:
+Now Distelli will prompt you to download the manifest file. Make sure you select the Javascript Version of the manifest, as our code is written in Javascript. You will need this file to successfully build and deploy your application. Download the file and then open in your favorite text editor. We will need to make the following changes:
 
       PkgInclude:
           - '*'
@@ -171,17 +169,17 @@ The final step is select our Build Image. In this case we are going to select "D
 
 <img src="images/distelliStartBuild.png" alt="Start Distelli Build" />
 
-Now our build should be automatically building. You can watch its progress in the builds tab on your Distelli account. You should see that your build has sucessfully been built and is now ready to deploy.
+Now our build should be automatically building. You can watch its progress in the builds tab on your Distelli account. You should see that your build has been built successfully and is now ready to deploy.
 
 <img src="images/distelliSuccessfulBuild.png" alt="Distelli Build Successful" />
 
 ## Step 5. Deploy Your Build
 
-Now that we successfully built our application we are ready to deploy to our server. On the builds page select the "New Deployment" button in the right hand corner.
+Now that we have successfully built our application we are ready to deploy to our server. On the builds page select the "New Deployment" button in the right hand corner.
 
 <img src="images/distelliNewDeployment.png" alt="Distelli Create New Deployment" />
 
-Once you click the button, you should be directed towards Distelli's deployment page. The first step is select the "Deploy a Release" option.
+Once you click the button, you should be directed towards Distelli's deployment page. The first step is to select the "Deploy a Release" option.
 
 <img src="images/distelliDeployRelease.png" alt="Deploy Distelli Release" />
 
@@ -201,7 +199,7 @@ Once you've set up your deployment settings, Distelli will ask you to add server
 
 <img src="images/distelliStartDeployment.png" alt="Start Your Distelli Deployment" />
 
-Click the "Start Deployment" button to begin your deployment. You will redirected to a page where you can view the progress of your deployment. Simply clicking the "log" button on the left side that enables you to view realtime streaming logs for the deployment. Once you deployment is complete, you should see a screen similar to the screenshot below:
+Click the "Start Deployment" button to begin your deployment. You will redirected to a page where you can view the progress of your deployment. Simply clicking the "log" button on the left side that enables you to view realtime streaming logs for the deployment. Once you deployment is complete, your screen should be similar to the screenshot below:
 
 <img src="images/distelliDeploymentSuccessful.png" alt="Distelli Deployment Successful" />
 
