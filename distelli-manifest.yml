@@ -17,6 +17,7 @@ zchase/node-tutorial:
 
   PostInstall:
     - npm install
+    - npm test
 
   Exec:
     - /usr/bin/nodejs app.js
