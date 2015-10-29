@@ -4,9 +4,6 @@ zchase/node-tutorial:
   PkgInclude:
     - '*'
 
-  PkgExclude:
-    - node_modules/
-
   PreRelease:
     - npm install
     - npm test
