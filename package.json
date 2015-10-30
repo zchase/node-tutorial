@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
