@@ -5,7 +5,7 @@ zchase/node-tutorial:
 
   PreRelease:
     - npm install
-    - npm install jasmine-node --save
+    #- npm install jasmine-node --save
     - npm test
 
   PreInstall:
