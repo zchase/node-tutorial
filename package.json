@@ -1,5 +1,5 @@
 {
-  "name": "jasminetesting",
+  "name": "node-tutorial",
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
