@@ -15,7 +15,7 @@ zchase/nginx:
     - 'if [ -a /etc/nginx ]; then'
     -     echo "NGINX is already installed"
     - else
-    -     sudo apt-get install nginx
+    -     sudo apt-get install nginx -y
     - fi
     - 'if [ -a /etc/nginx/sites-enabled/default ]; then'
     -     sudo rm /etc/nginx/sites-enabled/default
@@ -34,7 +34,7 @@ zchase/nginx:
     - else
     -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
     - fi
-    - sudo service nginx restart
+    - sudo service nginx restart -y
 
 
   Exec:
