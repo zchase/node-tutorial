@@ -5,7 +5,6 @@ zchase/nginx:
 
   PreRelease:
     - npm install
-    #- npm install jasmine-node --save
     - npm test
 
   PreInstall:
@@ -22,20 +21,20 @@ zchase/nginx:
     - else
     -     echo "Default NGINX already removed"
     - fi
-    # - 'if [ -a /etc/nginx/sites-available/node ]; then'
-    # -     sudo rm /etc/nginx/sites-available/node
-    # -     mv node /etc/nginx/sites-available/node
-    # - else
-    # -     mv node /etc/nginx/sites-available/node
-    # - fi
+    - sudo service nginx restart -y
+
+
+  Exec:
+    - 'if [ -a /etc/nginx/sites-available/node ]; then'
+    -     sudo rm /etc/nginx/sites-available/node
+    -     mv node /etc/nginx/sites-available/node
+    - else
+    -     mv node /etc/nginx/sites-available/node
+    - fi
     - 'if [ -a /etc/nginx/sites-enabled/node ]; then'
     -     sudo rm /etc/nginx/sites-enabled/node
     -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
     - else
     -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
     - fi
-    - sudo service nginx restart -y
-
-
-  Exec:
     - /usr/bin/nodejs app.js
