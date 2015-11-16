@@ -21,8 +21,6 @@ zchase/nginx:
     - else
     -     echo "Default NGINX already removed"
     - fi
-    - sudo service nginx restart -y
-
 
   Exec:
     - 'if [ -a /etc/nginx/sites-available/node ]; then'
@@ -37,4 +35,5 @@ zchase/nginx:
     - else
     -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
     - fi
+    - sudo service nginx restart -y
     - /usr/bin/nodejs app.js
