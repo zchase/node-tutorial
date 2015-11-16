@@ -27,9 +27,9 @@ zchase/nginx:
   Exec:
     - 'if [ -a /etc/nginx/sites-available/node ]; then'
     -     sudo rm /etc/nginx/sites-available/node
-    -     mv node /etc/nginx/sites-available/node
+    -     sudo mv node /etc/nginx/sites-available/node
     - else
-    -     mv node /etc/nginx/sites-available/node
+    -     sudo mv node /etc/nginx/sites-available/node
     - fi
     - 'if [ -a /etc/nginx/sites-enabled/node ]; then'
     -     sudo rm /etc/nginx/sites-enabled/node
