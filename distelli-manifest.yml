@@ -1,4 +1,4 @@
-zchase/node-tutorial:
+zchase/nginx:
 
   PkgInclude:
     - '*'

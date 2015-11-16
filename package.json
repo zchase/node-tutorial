@@ -6,7 +6,6 @@
     "express": "^4.13.3",
     "request": "^2.65.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "mocha"
   },
@@ -20,5 +19,11 @@
     "url": "https://github.com/zchase/node-tutorial/issues"
   },
   "homepage": "https://github.com/zchase/node-tutorial#readme",
-  "description": ""
+  "directories": {
+    "test": "test"
+  },
+  "description": "",
+  "devDependencies": {
+    "should": "^7.1.1"
+  }
 }
