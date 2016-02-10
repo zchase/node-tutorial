@@ -5,7 +5,7 @@ zchase/nginx:
 
   PreRelease:
     - npm install
-    - npm test
+    #- npm test
 
   PreInstall:
     - sudo apt-get update
